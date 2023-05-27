@@ -360,7 +360,7 @@
                 if(this.totalCriteriaPercentage >= 100)
                     return this.$store.state.rating.min;
                 else
-                    return this.totalCriteriaPercentage * 0.60;
+                    return this.totalCriteriaPercentage * 0.70;
             },
             maxRating() {
                 if(this.totalCriteriaPercentage >= 100)
