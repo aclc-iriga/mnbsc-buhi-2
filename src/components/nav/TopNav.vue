@@ -10,7 +10,7 @@
         <v-spacer/>
 
         <!-- horizontal menu -->
-        <h-menu v-if="$vuetify.display.lgAndUp"/>
+        <h-menu v-if="$vuetify.display.lgAndUp && showHMenu"/>
 
 		<template v-if="$store.getters['auth/getUser'] !== null">
             <v-spacer/>
@@ -130,6 +130,12 @@
         name: "TopNav",
         components: {
             HMenu
+        },
+        props: {
+            showHMenu: {
+                type: Boolean,
+                default: true
+            }
         },
         data() {
             return {

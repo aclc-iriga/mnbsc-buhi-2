@@ -1,16 +1,16 @@
 <template>
-    <top-nav/>
+    <top-nav :show-h-menu="eventSlugs[1] != null"/>
 
-    <side-nav v-if="$vuetify.display.mdAndDown"/>
+    <side-nav v-if="$vuetify.display.mdAndDown || eventSlugs[1] == null"/>
 
 	<v-main v-if="$store.getters['auth/getUser'] !== null">
-        <v-row>
-            <v-col cols="12" lg="6" class="pr-lg-6">
+        <v-row class="justify-center">
+            <v-col cols="12" :lg="eventSlugs[1] != null ? 6 : 12" :class="{ 'pr-lg-6': eventSlugs[1] != null }">
                 <template v-if="eventSlugs[0]">
                     <judge-rating :event-slug="eventSlugs[0]"/>
                 </template>
             </v-col>
-            <v-col cols="12" lg="6" class="pl-lg-6">
+            <v-col v-if="eventSlugs[1] != null" cols="12" lg="6" class="pl-lg-6">
                 <template v-if="eventSlugs[1]">
                     <judge-rating :event-slug="eventSlugs[1]"/>
                 </template>

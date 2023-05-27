@@ -12,7 +12,7 @@ class Team extends App
     protected $number = 0;
     protected $name;
     protected $location;
-    protected $avatar;
+    protected $avatar   = 'candidate.jpg';
     protected $disabled = false;
 
 
@@ -37,7 +37,7 @@ class Team extends App
                 $this->number = $row['number'];
                 $this->name = $row['name'];
                 $this->location = $row['location'];
-                $this->avatar = $row['avatar'];
+                // $this->avatar = $row['avatar'];
             }
         }
     }

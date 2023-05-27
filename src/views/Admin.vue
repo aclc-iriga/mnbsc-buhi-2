@@ -6,12 +6,12 @@
     <v-main v-if="$store.getters['auth/getUser'] !== null">
         <template v-if="duoSlug && results">
             <v-row>
-                <v-col cols="12" lg="6" class="pr-lg-6">
-                    <template v-if="results.event_1">
+                <v-col cols="12" :lg="eventSlugs[1] !== '' ? 6 : 12" :class="{ 'pr-lg-6': eventSlugs[1] !== '' }">
+                    <div v-if="results.event_1">
                         <admin-result :event="results.event_1" :result="results.result_1"/>
-                    </template>
+                    </div>
                 </v-col>
-                <v-col cols="12" lg="6" class="pr-lg-6" style="page-break-before: always">
+                <v-col v-if="eventSlugs[1] !== ''" cols="12" lg="6" class="pl-lg-6" style="page-break-before: always">
                     <template v-if="results.event_2">
                         <admin-result :event="results.event_2" :result="results.result_2"/>
                     </template>
