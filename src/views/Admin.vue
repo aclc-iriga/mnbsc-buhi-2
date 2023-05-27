@@ -1,7 +1,7 @@
 <template>
-	<top-nav/>
+    <top-nav :show-h-menu="eventSlugs[1] !== ''"/>
 
-	<side-nav v-if="$vuetify.display.mdAndDown"/>
+	<side-nav v-if="$vuetify.display.mdAndDown || eventSlugs[1] === ''"/>
 
     <v-main v-if="$store.getters['auth/getUser'] !== null">
         <template v-if="duoSlug && results">
