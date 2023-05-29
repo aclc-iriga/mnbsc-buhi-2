@@ -296,6 +296,9 @@
         style="page-break-before: always;"
     >
         <v-col cols="12" sm="9" md="7" lg="5">
+            <div class="mb-2" align="center">
+                <img src="/competition.png" style="width: 256px;" alt="Event">
+            </div>
             <div style="padding: 15px">
                 <table class="table-winners" style="width: 100%">
                     <tbody>
@@ -304,7 +307,7 @@
                             :key="winner[0]"
                         >
                             <tr v-if="winnerIndex > 0">
-                                <td colspan="3" style="height: 100px;"></td>
+                                <td colspan="3"><div style="height: 64px;"></div></td>
                             </tr>
                             <tr>
                                 <td colspan="3" class="pa-3 text-center" style="border: 1px solid #ddd">
@@ -318,9 +321,9 @@
                                 >
                                     {{ teams[winner[0]].number }}
                                 </td>
-                                <td style="width: 72px; padding-top: 8px !important; padding-bottom: 8px !important; border-bottom: 1px solid #ddd;">
+                                <td style="width: 88px; padding-top: 8px !important; padding-bottom: 8px !important; border-bottom: 1px solid #ddd;">
                                     <img
-                                        style="width: 100%; border-radius: 100%;"
+                                        style="width: 88px; border-radius: 100%;"
                                         :src="`${$store.getters.appURL}/crud/uploads/${teams[winner[0]].avatar}`"
                                     />
                                 </td>
@@ -328,8 +331,8 @@
                                     class="pa-3"
                                     style="border-bottom: 1px solid #ddd; border-right: 1px solid #ddd;"
                                 >
-                                    <p class="ma-0 text-h6 text-uppercase font-weight-bold" style="line-height: 1.2">{{ teams[winner[0]].name }}</p>
-                                    <p class="mt-1 text-body-1 mb-0" style="line-height: 1"><small>{{ teams[winner[0]].location }}</small></p>
+                                    <p class="ma-0 text-h5 text-uppercase font-weight-bold" style="line-height: 1.2">{{ teams[winner[0]].name }}</p>
+                                    <p class="mt-1 text-h6 font-weight-light mb-0" style="line-height: 1">{{ teams[winner[0]].location }}</p>
                                 </td>
                             </tr>
                         </template>
