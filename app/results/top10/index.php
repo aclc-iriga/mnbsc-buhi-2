@@ -340,8 +340,15 @@
     sort($tops_ordered);
 
     // shuffle $tops_unordered (deterministic)
-    mt_srand(325471968);
+    mt_srand(425371986);
     shuffle($tops_unordered);
+
+    // arrange for Final Q&A
+    $event_final_qa = Event::findBySlug('final-qa');
+    for($i=0; $i<sizeof($tops_unordered); $i++) {
+        $team_key = 'team_' . $tops_unordered[$i];
+        $event_final_qa->setTeamOrder($teams[$team_key], ($i + 1));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -616,7 +623,6 @@
                 <!-- unordered -->
                 <div class="col-md-6" align="center">
                     <h1><b>TOP <?= sizeof($titles) ?></b> in <b class="text-danger">Random</b> Order</h1>
-                    <h4 class="text-danger fw-bold">(FOR ANNOUNCEMENT)</h4>
                     <div class="mt-4" style="width: 80%;">
                         <table class="table table-bordered mt-3">
                             <tbody>
@@ -625,47 +631,6 @@
                                 $team_key = 'team_'.$team_id;
                                 $team = $results[$team_key];
                             ?>
-                                <tr>
-                                    <!-- number -->
-                                    <td class="fw-bold text-center">
-                                        <h2 class="m-0 fw-bold">
-                                            <?= $team['info']['number'] ?>
-                                        </h2>
-                                    </td>
-
-                                    <!-- avatar -->
-                                    <td style="width: 88px;">
-                                        <img
-                                            src="../../crud/uploads/<?= $team['info']['avatar'] ?>"
-                                            alt="<?= $team['info']['number'] ?>"
-                                            style="width: 100%; border-radius: 100%"
-                                        >
-                                    </td>
-
-                                    <!-- name -->
-                                    <td>
-                                        <h6 class="text-uppercase m-0"><?= $team['info']['name'] ?></h6>
-                                        <small class="m-0"><?= $team['info']['location'] ?></small>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- ordered -->
-                <div class="col-md-6" align="center">
-                    <h1><b>TOP <?= sizeof($titles) ?></b> in <b class="text-success">Sequential</b> Order</h1>
-                    <h4 class="text-success fw-bold">(FOR FINAL Q&A)</h4>
-                    <div class="mt-4" style="width: 80%;">
-                        <table class="table table-bordered mt-3">
-                            <tbody>
-                            <?php
-                            foreach($tops_ordered as $team_id) {
-                                $team_key = 'team_'.$team_id;
-                                $team = $results[$team_key];
-                                ?>
                                 <tr>
                                     <!-- number -->
                                     <td class="fw-bold text-center">
