@@ -153,7 +153,7 @@
                                 <b>NOTE: </b>
                                 Please utilize this printed rating sheet for note-taking purposes only.
                                 Kindly record the final ratings of candidates in the digital rating sheets we will supply.
-                                If you require assistance or have any concerns, please call our attention or press the "ASK FOR HELP" button on your screens.
+                                If you require assistance or have any concerns, please call our attention or press the "ASK FOR HELP" button on your screen.
                                 Thank you.
                             </p>
                         </div>
