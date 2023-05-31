@@ -1,16 +1,16 @@
 <template>
-	<top-nav/>
+    <top-nav :show-h-menu="showRightColumn"/>
 
-	<side-nav v-if="$vuetify.display.mdAndDown"/>
+    <side-nav v-if="$vuetify.display.mdAndDown || !showRightColumn"/>
 
 	<v-main v-if="$store.getters['auth/getUser'] !== null">
-        <v-row>
-            <v-col cols="12" lg="6" class="pr-lg-6">
+        <v-row class="justify-center">
+            <v-col cols="12" :lg="showRightColumn ? 6 : 12" :class="{ 'pr-lg-6': showRightColumn }">
                 <template v-if="eventSlugs[0]">
                     <technical-deduction :event-slug="eventSlugs[0]"/>
                 </template>
             </v-col>
-            <v-col cols="12" lg="6" class="pr-lg-6">
+            <v-col v-if="showRightColumn" cols="12" lg="6" class="pl-lg-6">
                 <template v-if="eventSlugs[1]">
                     <technical-deduction :event-slug="eventSlugs[1]"/>
                 </template>
@@ -47,6 +47,9 @@
                         slugs = duo.eventSlugs;
                 }
                 return slugs;
+            },
+            showRightColumn() {
+                return this.eventSlugs[1] != null;
             }
         },
         watch: {
