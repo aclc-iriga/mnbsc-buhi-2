@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 02:18 AM
+-- Generation Time: Jun 01, 2023 at 05:25 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -141,7 +141,7 @@ INSERT INTO `criteria` (`id`, `event_id`, `title`, `percentage`, `created_at`, `
 (12, 4, 'Intelligence and Wit', 30, '2023-05-27 08:42:39', '2023-05-27 08:42:39'),
 (13, 5, 'Beauty of Face & Figure', 30, '2023-05-27 08:43:06', '2023-05-27 08:43:06'),
 (14, 5, 'Poise and Carriage', 30, '2023-05-27 08:43:15', '2023-05-27 08:43:15'),
-(15, 5, 'Elegance and Style', 30, '2023-05-27 08:43:26', '2023-05-27 08:47:55'),
+(15, 5, 'Elegance and Style with Copper or Bronze Brown', 30, '2023-05-27 08:43:26', '2023-06-01 03:25:21'),
 (16, 5, 'Over-all Impact', 10, '2023-05-27 08:43:34', '2023-05-27 08:43:34'),
 (17, 6, 'Beauty of Face & Figure, Poise and Carriage', 60, '2023-05-27 08:48:32', '2023-05-27 08:48:32'),
 (18, 6, 'Intelligence and Wit', 40, '2023-05-27 08:48:42', '2023-05-27 08:48:42');
