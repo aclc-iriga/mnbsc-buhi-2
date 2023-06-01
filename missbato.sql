@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2023 at 08:28 AM
+-- Generation Time: Jun 01, 2023 at 02:18 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -297,9 +297,7 @@ INSERT INTO `judges` (`id`, `number`, `name`, `avatar`, `username`, `password`, 
 (4, 4, 'Judge 04', 'no-avatar.jpg', 'judge04', 'judge04', NULL, NULL, NULL, '2023-04-06 13:59:26', '2023-04-06 13:59:26'),
 (5, 5, 'Judge 05', 'no-avatar.jpg', 'judge05', 'judge05', NULL, NULL, NULL, '2023-04-06 14:00:00', '2023-04-06 14:00:00'),
 (6, 6, 'Judge 06', 'no-avatar.jpg', 'judge06', 'judge06', NULL, NULL, NULL, '2023-05-27 07:58:41', '2023-05-27 07:58:41'),
-(7, 7, 'Judge 07', 'no-avatar.jpg', 'judge07', 'judge07', NULL, NULL, NULL, '2023-05-27 07:59:01', '2023-05-27 07:59:01'),
-(8, 8, 'Judge 08', 'no-avatar.jpg', 'judge08', 'judge08', NULL, NULL, NULL, '2023-05-27 07:59:16', '2023-05-27 07:59:16'),
-(9, 9, 'Judge 09', 'no-avatar.jpg', 'judge09', 'judge09', NULL, NULL, NULL, '2023-05-27 07:59:33', '2023-05-27 07:59:33');
+(7, 7, 'Judge 07', 'no-avatar.jpg', 'judge07', 'judge07', NULL, NULL, NULL, '2023-05-27 07:59:01', '2023-05-27 07:59:01');
 
 -- --------------------------------------------------------
 
@@ -362,19 +360,7 @@ INSERT INTO `judge_event` (`id`, `judge_id`, `event_id`, `is_chairman`, `created
 (39, 7, 3, 0, '2023-05-27 09:48:05', '2023-05-27 09:48:05'),
 (40, 7, 4, 0, '2023-05-27 09:48:08', '2023-05-27 09:48:08'),
 (41, 7, 5, 0, '2023-05-27 09:48:10', '2023-05-27 09:48:10'),
-(42, 7, 6, 0, '2023-05-27 09:48:12', '2023-05-27 09:48:12'),
-(43, 8, 1, 0, '2023-05-27 09:48:17', '2023-05-27 09:48:17'),
-(44, 8, 2, 0, '2023-05-27 09:48:19', '2023-05-27 09:48:19'),
-(45, 8, 3, 0, '2023-05-27 09:48:22', '2023-05-27 09:48:22'),
-(46, 8, 4, 0, '2023-05-27 09:48:24', '2023-05-27 09:48:24'),
-(47, 8, 5, 0, '2023-05-27 09:48:27', '2023-05-27 09:48:27'),
-(48, 8, 6, 0, '2023-05-27 09:48:29', '2023-05-27 09:48:29'),
-(49, 9, 1, 0, '2023-05-27 09:48:33', '2023-05-27 09:48:33'),
-(50, 9, 2, 0, '2023-05-27 09:48:37', '2023-05-27 09:48:37'),
-(51, 9, 3, 0, '2023-05-27 09:48:39', '2023-05-27 09:48:39'),
-(52, 9, 4, 0, '2023-05-27 09:48:41', '2023-05-27 09:48:41'),
-(53, 9, 5, 0, '2023-05-27 09:48:45', '2023-05-27 09:48:45'),
-(54, 9, 6, 0, '2023-05-27 09:48:47', '2023-05-27 09:48:47');
+(42, 7, 6, 0, '2023-05-27 09:48:12', '2023-05-27 09:48:12');
 
 -- --------------------------------------------------------
 
@@ -754,13 +740,13 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `judges`
 --
 ALTER TABLE `judges`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `judge_event`
 --
 ALTER TABLE `judge_event`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `noshows`
