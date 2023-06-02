@@ -596,7 +596,7 @@
         <div class="container-fluid mt-4 pb-2">
             <div class="row justify-content-center">
                 <?php foreach($judges as $judge) { ?>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="mt-5 pt-3 text-center">
                             <h5 class="mb-0"><?= $judge->getName() ?></h5>
                         </div>
