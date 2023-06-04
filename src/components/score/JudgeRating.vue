@@ -22,13 +22,31 @@
                     :class="{ 'bg-grey-lighten-4': coordinates.x == criterionIndex && !scoreSheetDisabled }"
                 >
                     <div class="d-flex h-100 flex-column align-content-space-between">
-                        <p class="text-grey-darken-2" :class="$vuetify.display.mdAndDown ? 'text-subtitle-1' : ''">{{ criterion.title }}</p>
-                        <b class="text-grey-darken-4 font-weight-bold" :class="$vuetify.display.mdAndDown ? 'text-subtitle-2' : 'text-h6'" style="margin-top: auto">{{ criterion.percentage }}%</b>
+                        <p
+                            class="text-grey-darken-1"
+                            :class="{
+                                'text-subtitle-1': $vuetify.display.mdAndDown,
+                                'text-grey-darken-3': coordinates.x == criterionIndex && !scoreSheetDisabled
+                            }"
+                        >
+                            {{ criterion.title }}
+                        </p>
+                        <b
+                            class="text-grey-darken-2"
+                            :class="{
+                                'text-subtitle-2 font-weight-bold': $vuetify.display.mdAndDown,
+                                'text-h6': $vuetify.display.lgAndUp,
+                                'text-grey-darken-4': coordinates.x == criterionIndex && !scoreSheetDisabled
+                            }"
+                            style="margin-top: auto"
+                        >
+                            {{ criterion.percentage }}%
+                        </b>
                     </div>
                 </th>
                 <th
                     style="width: 13%"
-                    class="text-uppercase text-center text-grey-darken-4 font-weight-bold py-3"
+                    class="text-uppercase text-center text-grey-darken-3 font-weight-bold py-3"
                     :class="{ 'bg-grey-lighten-4': coordinates.x == criteria.length && !scoreSheetDisabled }, $vuetify.display.mdAndDown ? 'text-body-1' : 'text-h6'"
                 >
                     Total
@@ -36,7 +54,7 @@
                 </th>
                 <th
                     style="width: 13%"
-                    class="text-uppercase text-center text-grey-darken-4 font-weight-bold py-3"
+                    class="text-uppercase text-center text-grey-darken-3 font-weight-bold py-3"
                     :class="$vuetify.display.mdAndDown ? 'text-body-1' : 'text-h6'"
                 >
                     Rank
@@ -50,7 +68,10 @@
                 :key="team.id"
                 :class="{ 'bg-grey-lighten-4': coordinates.y == teamIndex && !scoreSheetDisabled }"
             >
-                <td class="text-uppercase text-right text-h4 font-weight-bold text-grey-darken-4">
+                <td
+                    class="text-uppercase text-right text-h5 font-weight-bold text-grey-darken-2"
+                    :class="{ 'text-grey-darken-4': coordinates.y == teamIndex && !scoreSheetDisabled }"
+                >
                     {{ team.number }}
                 </td>
                 <td style="width: 72px;">
@@ -61,7 +82,10 @@
                         />
                     </v-avatar>
                 </td>
-                <td class="px-0">
+                <td
+                    class="px-0 text-grey-darken-2"
+                    :class="{ 'text-grey-darken-4': coordinates.y == teamIndex && !scoreSheetDisabled }"
+                >
                     <p class="ma-0 text-subtitle-2 text-uppercase font-weight-bold" style="line-height: 1.2">{{ team.name }}</p>
                     <p class="mt-1 mb-0" style="line-height: 1"><small>{{ team.location }}</small></p>
                 </td>
@@ -84,7 +108,11 @@
                                 ratings[`${event.slug}_${team.id}`][`${$store.getters['auth/getUser'].id}_${criterion.id}_${team.id}`].value < 0 ||
                                 ratings[`${event.slug}_${team.id}`][`${$store.getters['auth/getUser'].id}_${criterion.id}_${team.id}`].value > criterion.percentage
                             ),
-                            'text-grey-darken-1': ratings[`${event.slug}_${team.id}`][`${$store.getters['auth/getUser'].id}_${criterion.id}_${team.id}`].value === 0
+                            'text-grey-darken-1': ratings[`${event.slug}_${team.id}`][`${$store.getters['auth/getUser'].id}_${criterion.id}_${team.id}`].value === 0,
+                            'text-grey-darken-3': (
+                                ratings[`${event.slug}_${team.id}`][`${$store.getters['auth/getUser'].id}_${criterion.id}_${team.id}`].value > 0 &&
+                                ratings[`${event.slug}_${team.id}`][`${$store.getters['auth/getUser'].id}_${criterion.id}_${team.id}`].value <= criterion.percentage
+                            )
                         }"
                         :error="(
                               ratings[`${event.slug}_${team.id}`][`${$store.getters['auth/getUser'].id}_${criterion.id}_${team.id}`].value.toString().trim() === ''
@@ -125,7 +153,7 @@
                                 totals[`team_${team.id}`].value < minRating
                             || totals[`team_${team.id}`].value > maxRating
                             ),
-                            'text-success font-weight-bold': (
+                            'text-green-darken-2 font-weight-bold': (
                                 totals[`team_${team.id}`].value >= minRating
                             && totals[`team_${team.id}`].value <= maxRating
                             )
@@ -134,7 +162,7 @@
                               totals[`team_${team.id}`].value.toString().trim() === ''
                            || totals[`team_${team.id}`].value < minRating
                            || totals[`team_${team.id}`].value > maxRating
-                       )"
+                        )"
                         :disabled="team.disabled || totals[`team_${team.id}`].is_locked"
                         :id="`input_${teamIndex}_${criteria.length}`"
                         @keydown.down.prevent="moveDown(criteria.length, teamIndex)"
@@ -148,7 +176,8 @@
                 <td
                     class="text-center text-h6"
                     :class="{
-                        'text-grey-darken-2': !scoreSheetDisabled,
+                        'text-grey-darken-2': coordinates.y != teamIndex && !scoreSheetDisabled,
+                        'text-grey-darken-4': coordinates.y == teamIndex && !scoreSheetDisabled,
                         'text-grey-darken-1': scoreSheetDisabled,
                     }"
                 >
