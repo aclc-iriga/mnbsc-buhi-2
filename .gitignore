@@ -19,6 +19,12 @@ app/_test.php
 app/_env.php
 app/config/database.php
 app/crud/uploads/*
+!app/crud/uploads/01-bato-national-high-school.jpg
+!app/crud/uploads/02-holy-trinity-college-of-camarines-sur.jpg
+!app/crud/uploads/03-ocampo-academy-technological-institute.jpg
+!app/crud/uploads/04-salvacion-national-high-school.jpg
+!app/crud/uploads/05-san-roque-high-school.jpg
+!app/crud/uploads/06-st-john-the-baptist-institute-of-bicol.jpg
 !app/crud/uploads/no-avatar.jpg
 !app/crud/dist
 /cypress/videos/
