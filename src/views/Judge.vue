@@ -49,7 +49,7 @@
                 return slugs;
             },
             showRightColumn() {
-                return this.eventSlugs[1] != null && this.eventSlugs[1] !== 'production-attire';
+                return this.eventSlugs[1] != null;
             }
         },
         watch: {

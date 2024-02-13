@@ -77,21 +77,6 @@ else {
             $team = Team::findById($rating['team_id']);
             $criterion = Criterion::findById($rating['criterion_id']);
             $judge->setCriterionTeamRating($criterion, $team, $value);
-
-            // map [production-number] to [production-attire]
-            require_once 'models/Event.php';
-            $event1 = $criterion->getEvent();
-            if($event1->getSlug() == 'production-number') {
-                if($event2 = Event::findBySlug('production-attire')) {
-                    foreach($event2->getAllCriteria() as $event2_criterion) {
-                        if(trim(strtolower($criterion->getTitle())) == trim(strtolower($event2_criterion->getTitle()))) {
-                            $value = ($event2_criterion->getPercentage() * $value) / $criterion->getPercentage();
-                            $judge->setCriterionTeamRating($event2_criterion, $team, $value);
-                            break;
-                        }
-                    }
-                }
-            }
         }
 
         // submit ratings
