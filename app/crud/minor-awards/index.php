@@ -36,7 +36,7 @@
 </head>
 <body>
     <div class="container py-5">
-        <h2 class="fw-bolder">Miss Bato (Camarines Sur) 2023</h2>
+        <h2 class="fw-bolder">Military Parade, DLC, Majorettes, and Silent Fancy Drill 2024</h2>
     </div>
     <div>
         <table>

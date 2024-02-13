@@ -12,7 +12,7 @@ export default createStore({
 
     state: {
         app: {
-            title: 'Miss Bato 2023',
+            title: 'Military Parade, DLC, Majorettes and Silent Fancy Drill Competition 2024',
             org: 'ACLC College Iriga',
             backendDir: 'app',
             sideNav: false
@@ -39,7 +39,7 @@ export default createStore({
         // get app url
         appURL(state) {
             const location = window.location;
-            if(location.hostname === 'localhost' && location.port === '5186')
+            if(location.hostname === 'localhost' && location.port === '5192')
                 return `http://localhost${import.meta.env.BASE_URL}${state.app.backendDir}`;
             else
                 return `${location.protocol}//${location.hostname}${import.meta.env.BASE_URL}${state.app.backendDir}`;
