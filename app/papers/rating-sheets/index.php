@@ -160,7 +160,7 @@
 
                         <div class="col-md-2">
                             <div class="h-100 d-flex justify-content-center align-items-center">
-                                <img src="/mk/aclc-iriga.png" alt="ACLC College of Iriga (Official Tabulator)" style="width: 156px;"/>
+                                <img src="/cat-maj-dlc/aclc-iriga.png" alt="ACLC College of Iriga (Official Tabulator)" style="width: 156px;"/>
                             </div>
                         </div>
                     </div>
