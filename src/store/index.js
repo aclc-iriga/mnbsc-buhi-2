@@ -12,7 +12,7 @@ export default createStore({
 
     state: {
         app: {
-            title: 'Military Parade, DLC, Majorettes and Silent Fancy Drill Competition 2024',
+            title: 'CAT/MAPEH Parade, DLC, Majorettes and Silent Fancy Drill Competition 2024',
             org: 'ACLC College Iriga',
             backendDir: 'app',
             sideNav: false
