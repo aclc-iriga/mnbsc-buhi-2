@@ -58,15 +58,16 @@ else if(isset($_POST['signOut'])) {
 
 
 $routes = [
-    [ "name" => "Tabulation"                        , "route" => "/cat-maj-dlc"             ],
+    [ "name" => "Tabulation"                        , "route" => "/cat-maj-dlc"                 ],
     [ "name" => "CRUD"                              , "route" => "crud/competitions.php"        ],
     [ "name" => "User Assignments"                  , "route" => "crud/assignment"              ],
     [ "name" => "Minor Awards"                      , "route" => "crud/minor-awards"            ],
     [ "name" => "Eliminations"                      , "route" => "crud/eliminations"            ],
     [ "name" => "Arrangements"                      , "route" => "crud/orders"                  ],
     [ "name" => "Rating Sheets"                     , "route" => "papers/rating-sheets"         ],
+    [ "name" => "Overall Results"                   , "route" => "results/overall"              ],
     [ "name" => "Street Parade Overall Results"     , "route" => "results/parade-overall"       ],
-    [ "name" => "Drill Exhibition Overall Results"  , "route" => "results/exhibition-overall"         ],
+    [ "name" => "Drill Exhibition Overall Results"  , "route" => "results/exhibition-overall"   ],
 ];
 ?>
 <!DOCTYPE html>
