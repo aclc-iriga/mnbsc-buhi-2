@@ -70,7 +70,7 @@ $result = [];
 $unique_total_rank_ave_equivs = [];
 $unique_total_percentages = [];
 $unique_adjusted_ranks = [];
-foreach($events[0]->getAllTeams() as $team) {
+foreach($events[1]->getAllTeams() as $team) {
     $team_key = 'team_'.$team->getId();
     $t = [
         'info'    => $team->toArray(),
