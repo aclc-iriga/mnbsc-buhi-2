@@ -10,21 +10,37 @@ require_once '../../models/Event.php';
 // involved events
 const EVENTS = [
     [
+        'slug'    => 'marching-cat-boys',
+        'percent' => 14.29
+    ],
+    [
+        'slug'    => 'marching-cat-girls',
+        'percent' => 14.29
+    ],
+    [
+        'slug'    => 'marching-majorettes',
+        'percent' => 14.29
+    ],
+    [
+        'slug'    => 'marching-dlc',
+        'percent' => 14.29
+    ],
+    [
         'slug'    => 'exhibition-cat',
-        'percent' => 33.33
+        'percent' => 14.29
     ],
     [
         'slug'    => 'exhibition-majorettes',
-        'percent' => 33.33
+        'percent' => 14.29
     ],
     [
         'slug'    => 'exhibition-dlc',
-        'percent' => 33.33
+        'percent' => 14.29
     ]
 ];
 
 // initialize titles
-$titles = ['Drill Exhibition Overall Champion'];
+$titles = ['Overall Champion'];
 
 // initialize admin
 $admin = new Admin();
@@ -70,7 +86,7 @@ $result = [];
 $unique_total_rank_ave_equivs = [];
 $unique_total_percentages = [];
 $unique_adjusted_ranks = [];
-foreach($events[1]->getAllTeams() as $team) {
+foreach($events[0]->getAllTeams() as $team) {
     $team_key = 'team_'.$team->getId();
     $t = [
         'info'    => $team->toArray(),
