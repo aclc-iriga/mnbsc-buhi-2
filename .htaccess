@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /cat-maj-dlc/
+RewriteBase /mnbsc-buhi-2/
 
 # Exclude assets from rewrite rule
 RewriteCond %{REQUEST_URI} !\.(css|js|svg|jpg|jpeg|png|gif|woff2|ico|ttf)$ [NC]
@@ -7,9 +7,9 @@ RewriteCond %{REQUEST_URI} !\.(css|js|svg|jpg|jpeg|png|gif|woff2|ico|ttf)$ [NC]
 # Redirect all requests to index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /cat-maj-dlc/public/index.html [L]
+RewriteRule ^(.*)$ /mnbsc-buhi-2/public/index.html [L]
 
 # Exclude the public and app directories from the rewrite rule
-RewriteCond %{REQUEST_URI} !^/cat-maj-dlc/public/
-RewriteCond %{REQUEST_URI} !^/cat-maj-dlc/app/
-RewriteRule ^(.*)$ /cat-maj-dlc/public/$1 [L]
+RewriteCond %{REQUEST_URI} !^/mnbsc-buhi-2/public/
+RewriteCond %{REQUEST_URI} !^/mnbsc-buhi-2/app/
+RewriteRule ^(.*)$ /mnbsc-buhi-2/public/$1 [L]

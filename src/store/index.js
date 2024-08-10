@@ -12,7 +12,7 @@ export default createStore({
 
     state: {
         app: {
-            title: 'CAT/MAPEH Parade, DLC, Majorettes and Silent Fancy Drill Competition 2024',
+            title: 'Mutya Bagong Santa Clara 2024',
             org: 'ACLC College Iriga',
             backendDir: 'app',
             sideNav: false
@@ -21,7 +21,7 @@ export default createStore({
             height: 0
         },
         rating: {
-            min: 50,
+            min: 60,
             max: 100
         },
         deduction: {
@@ -39,7 +39,7 @@ export default createStore({
         // get app url
         appURL(state) {
             const location = window.location;
-            if(location.hostname === 'localhost' && location.port === '5192')
+            if(location.hostname === 'localhost' && location.port === '5202')
                 return `http://localhost${import.meta.env.BASE_URL}${state.app.backendDir}`;
             else
                 return `${location.protocol}//${location.hostname}${import.meta.env.BASE_URL}${state.app.backendDir}`;

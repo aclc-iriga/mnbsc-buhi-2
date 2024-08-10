@@ -550,4 +550,26 @@ class Team extends App
     {
         return $event->hasTeamBeenEliminated($this);
     }
+
+
+
+    /***************************************************************************
+     * Determine if the team is a local resident
+     * according to organizers
+     *
+     * @return bool
+     */
+    public function isLocal()
+    {
+        $bool = false;
+        $haystack = str_replace(' ', '', strtolower($this->location));
+        $needles  = ['sta.clara,buhi', 'santaclara,buhi', 'sta.clarabuhi', 'santaclarabuhi'];
+        foreach($needles as $needle) {
+            if(strpos($haystack, $needle) !== false) {
+                $bool = true;
+                break;
+            }
+        }
+        return $bool;
+    }
 }

@@ -23,7 +23,7 @@ export default ({mode}) => {
         publicDir: 'assets',
         server: {
             host: 'localhost',
-            port: 5192,
+            port: 5202,
             strictPort: true
         },
         build: {
@@ -34,7 +34,7 @@ export default ({mode}) => {
     process.env = {...process.env, ...loadEnv(mode, process.cwd())};
     const SKIP_BASE_PATH = process.env.VITE_SKIP_BASE_PATH;
     if (SKIP_BASE_PATH === undefined || SKIP_BASE_PATH === 'false')
-        config.base = '/cat-maj-dlc/';
+        config.base = '/mnbsc-buhi-2/';
 
     return defineConfig(config);
 };
